@@ -1,0 +1,114 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #B3E5FC; /* Light Blue pastel background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #000; /* black text for contrast */
+}
+
+.container {
+  text-align: center;
+  max-width: 400px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px #ffffff50; /* subtle white shadow */
+}
+
+.mode-selection button,
+#resetBtn {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #FF4081, #FF80AB); /* playful pink gradient */
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mode-selection button:hover,
+#resetBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at center, #ffffff40, #89BB8B40); /* subtle pastel effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  cursor: pointer;
+  border-radius: 15px;
+  color: #000; /* default text color */
+  transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+}
+
+.cell.x {
+  color: #FF4081; /* Bright Pink for X */
+}
+
+.cell.o {
+  color: #FFEB3B; /* Bright Yellow for O */
+}
+
+.cell:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #FF4081, 0 0 40px #FFEB3B;
+}
+
+.game-status {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.winner {
+  color: #FFEB3B; /* Bright yellow */
+  text-shadow: 1px 1px #000;
+}
+
+.highlight {
+  background: #FFFF00;
+  color: black;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { background: #FFFF00; }
+  50% { background: #FFEB3B; }
+}
+
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
